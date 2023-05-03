@@ -24,6 +24,7 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
+ - NagiosCore : [e.g. 3.x, 4.x.]
  - OS: [e.g. Debian, Ubuntu, CentOS Stream, RockyLinux, RHEL ..]
  - Browser [e.g. chrome, safari, MS Edge]
  - Version [e.g. 22]
