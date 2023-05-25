@@ -1,5 +1,7 @@
-**pnp-0.6.?? ??/??/2017**
+**pnp-0.6.27 08/25/2023**
   * Bugfix: Fix for CVE-2017-16834
+  * Update: Use github for this project
+  * Update: npcd.c help message updated to refer github
 
 **pnp-0.6.26 08/21/2017**
   * Bugfix: Use complete option arguments for compatibility with rrdtool 1.6.0 (sbraz)
