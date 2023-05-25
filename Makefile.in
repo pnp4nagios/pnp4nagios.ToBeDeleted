@@ -36,10 +36,12 @@ CP=@CP@
 PERL=@PERL@
 
 none:
-	@echo "Please supply a command line argument (i.e. 'make all').  Other targets are:"
+	@echo "Please supply a command line argument (i.e. 'make compile')."
+	@echo "Other targets are:"
 	@echo "   clean"
-	@echo "   install install-init install-config install-processperfdata install-html fullinstall"
+	@echo "   fullinstall"
 	@echo "   install-plugins"
+	@echo "   rpm"
 
 all:
 	cd $(SRC_BASE) && $(MAKE)
@@ -50,13 +52,13 @@ all:
 	@echo ""
 	@echo "*** Compile finished ***"
 	@echo ""
-	@echo "  make install"
-	@echo "     - This installs the main program and HTML files"
+	@echo "  make compile"
+	@echo "     - This compile C programs,manpage and HTML files"
 	@echo ""
 	@echo "  make fullinstall"
 	@echo "     - This installs the main program, runlevel scripts, config and HTML files"
-	@echo ""
-	@echo "Enjoy."
+	@echo "  make rpm"
+	@echo "     - Use EPEL pnp4nagios.spec to create local RPMs"
 	@echo ""
 
 scripts:
@@ -74,7 +76,7 @@ clean:
 	cd $(SRC_CONFIG) && $(MAKE) $@
 	-rm -f *.cfg core
 	-rm -f *~ *.*~ */*~ */*.*~
-	-rm -f config.log config.status config.cache
+	-rm -f config.log config.status config.cache summary
 
 distclean: 
 	cd $(SRC_BASE) && $(MAKE) $@
@@ -85,7 +87,7 @@ distclean:
 	cd $(SRC_CONFIG) && $(MAKE) $@
 	-rm -f *.cfg core
 	-rm -f *~ *.*~ */*~ */*.*~
-	-rm -f config.log config.status config.cache
+	-rm -f config.log config.status config.cache autom4te.cache
 	rm -f Makefile include/stamp-h1 include/config.h config.status config.log
 	rm -f subst summary
 	rm -f $(SRC_CONTRIB)/ssi/status-header.ssi
@@ -140,7 +142,7 @@ install-webconf:
 install-plugins:
 	cd $(SRC_SCRIPTS) && $(MAKE) $@
 
-install:
+compile:
 	cd $(SRC_BASE) && $(MAKE) $@
 	cd $(SRC_MAN) && $(MAKE) $@
 	cd $(SRC_SHARE) && $(MAKE) $@
@@ -172,7 +174,7 @@ install-unstripped:
 	cd $(SRC_SCRIPTS) && $(MAKE) $@
 	$(MAKE) install-basic
 
-fullinstall: install install-webconf install-config install-init
+fullinstall: compile install-webconf install-config install-init
 
 	$(PERL) summary fullinstall
 	@echo ""
@@ -180,4 +182,6 @@ fullinstall: install install-webconf install-config install-init
 	@echo ""
 	@echo "Enjoy."
 	@echo ""
+rpm: all
+	@echo "*** TBC: Generateg RPMs  from pnp4nagios.spec ***"
 
