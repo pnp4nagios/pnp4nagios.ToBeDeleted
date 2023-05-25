@@ -1,4 +1,4 @@
-#@PERL@ -w
+#!@PERL@ -w
 @PERL_LIB_PATH_CODE@
 
 my %conf = (
