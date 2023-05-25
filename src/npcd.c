@@ -479,8 +479,8 @@ int process_arguments(int argc, char **argv) {
 		printf("\t\tPath to config file\n");
 		printf("\n");
 		printf(
-				"Visit the Website at http://sourceforge.net/projects/pnp4nagios/ for bug fixes, \n");
-		printf("new releases, online documentation, FAQs, Mailinglists.\n");
+				"Visit the Website at https://github.com/pnp4nagios/pnp4nagios/issues for bug fixes, \n");
+		printf("new releases, online documentation, FAQs, Discussions.\n");
 		printf("\n");
 
 		exit(EXIT_FAILURE);
