@@ -1,6 +1,6 @@
 #!@PERL@ -w
+no warnings 'numeric';
 @PERL_LIB_PATH_CODE@
-
 my %conf = (
     VERSION           => "@PKG_VERSION@",
     USE_RRDs          => "@RRDS@",
@@ -23,6 +23,7 @@ my $RRD_BINARY = "@RRDTOOL@";
 @v = split(/ /,$T[0]);
 $rrdtool_version = $v[1];
 $rrdtool_message = "";
+
 if($rrdtool_version == ""){
     $rrdtool_message = "WARNING: \"$RRD_BINARY\" does not look like rrdtool";
 }else{
