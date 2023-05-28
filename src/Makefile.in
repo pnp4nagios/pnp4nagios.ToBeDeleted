@@ -56,6 +56,7 @@ NPCDHEAD=$(SRC_INCLUDE)/pnp.h $(SRC_INCLUDE)/config.h
 OBJDEPS=
 
 all: npcd npcdmod.o
+compile: npcd npcdmod.o
 
 # Required Objects
 

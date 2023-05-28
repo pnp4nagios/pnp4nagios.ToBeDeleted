@@ -14,7 +14,7 @@ PERFDATADIR=@PERFDATA_DIR@
 
 CP=@CP@
 
-all html:
+all html compile:
 
 clean:
 

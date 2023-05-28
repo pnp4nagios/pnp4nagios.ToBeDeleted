@@ -10,7 +10,7 @@ DATAROOTDIR=@datarootdir@
 
 CP=@CP@
 
-all html:
+all html compile:
 
 clean:
 	-rm -f pnp/index.php

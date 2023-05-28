@@ -38,6 +38,7 @@ PERL=@PERL@
 none:
 	@echo "Please supply a command line argument (i.e. 'make compile')."
 	@echo "Other targets are:"
+	@echo "   all"
 	@echo "   clean"
 	@echo "   fullinstall"
 	@echo "   install-plugins"

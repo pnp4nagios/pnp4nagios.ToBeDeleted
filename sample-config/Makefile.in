@@ -14,7 +14,7 @@ PKG_VERSION=@PKG_VERSION@
 HTTPD_CONF=@HTTPD_CONF@
 CP=@CP@
 
-all html:
+all html compile:
 
 clean:
 	-rm -f pnp/config.php
