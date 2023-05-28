@@ -70,7 +70,7 @@ AC_C_CONST
 
 dnl Layout Methods
 layout="default"
-AC_ARG_WITH(layout,[  --with-layout=\[default,debian\] sets directory layout],layout=$withval)
+AC_ARG_WITH(layout,[  --with-layout=[default,debian,rpm] sets directory layout],layout=$withval)
 
 case $layout in
 	debian)
@@ -96,6 +96,25 @@ case $layout in
 		PERFDATA_LOG="\${prefix}/var/perfdata.log"
 		PERFDATA_DIR="\${prefix}/share/perfdata"
 		PERFDATA_SPOOL_DIR="\${prefix}/var/spool/perfdata"
+	;;
+	rpm)
+		prefix="/usr"
+		exec-prefix="\${prefix}"
+		bindir="\${prefix}/bin"
+		sbindir="\${prefix}/sbin"
+		includedir="/usr/include"
+		program-prefix=" --disable-dependency-tracking"
+		sysconfdir="/etc/pnp4nagios"
+		localstatedir="\${prefix}/var"
+		libexecdir="\${prefix}/libexec"
+		datarootdir="\${prefix}/share/pnp4nagios"
+		libdir="\${prefix}/lib64/pnp4nagios"
+		mandir="\${prefix}/share/man"
+		infodir="\${prefix}/share/info"
+		PERFDATA_LOG="/var/spool/nagios/perfdata.log"
+		PERFDATA_DIR="\${prefix}/share/pnp4nagios/perfdata"
+		PERFDATA_SPOOL_DIR="\${prefix}/var/spool/nagios"
+		sharedstatedir=/var/lib
 	;;
 	default)
 		PERFDATA_LOG="${localstatedir}/perfdata.log"
