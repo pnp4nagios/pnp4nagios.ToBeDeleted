@@ -38,6 +38,9 @@ class System_Controller extends Template_Controller {
 	if(! in_array(Router::$controller, array("image", "image_special", "xport"))){
             $this->session = Session::instance();
 
+            # Initialize CSRF Token
+            $this->session->set("csrf_token", Security::token());
+
             # Session withou theme info
             if($this->session->get("theme","new") == "new"){
                 if($this->theme){
