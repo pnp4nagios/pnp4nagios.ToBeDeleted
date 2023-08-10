@@ -1,3 +1,8 @@
+**pnp-0.7.0 10/08/2023**
+  * Update: Removed magic_quotes and MB_OVERLOAD_STRING references and checks for php8 compatibility (Ricardo Mendes)
+  * Bugfix: Fix for CVE-2023-38349 - Add CSRF Token to Template View and AJAX Controller merged from martialblog:fix/add-csrf-token
+  * Bugfix: Fix for CVE-2023-38350 - Fix XSS in AJAX controller for basket merged from martialblog:fix/basket-xss
+
 **pnp-0.6.27 08/25/2023**
   * Bugfix: Fix for CVE-2017-16834
   * Update: Use github for this project
